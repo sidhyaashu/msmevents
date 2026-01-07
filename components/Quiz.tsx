@@ -73,9 +73,9 @@ export default function Quiz() {
                     <motion.h2
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight opacity-50"
+                        className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                     >
-                        A quick quiz to help us create the event of your <span className="text-blue-500">dreams!</span>
+                       <span className="opacity-60"> A quick quiz to help us create the event of your <span className="text-blue-500">dreams!</span></span>
                     </motion.h2>
                     <p className="text-gray-400 text-lg leading-relaxed">
                         Fill out this short quiz if you already know the event you&#x27;d like to organize!

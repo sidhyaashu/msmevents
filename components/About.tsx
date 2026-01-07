@@ -47,9 +47,9 @@ export default function About() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight opacity-50"
+                            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
                         >
-                            MSM Events & Advertisements creates impactful events and brand activations with reliable execution across India.
+                            <span className="opacity-60">MSM Events & Advertisements creates impactful events and brand activations with reliable execution across India.</span>
 
                         </motion.h4>
 
