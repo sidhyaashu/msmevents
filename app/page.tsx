@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Cases from "@/components/Cases";
 import Services from "@/components/Services";
+import TeamSection from "@/components/TeamSection";
 
 import Footer from "@/components/Footer";
 import PhotoMarquee from "@/components/PhotoMarquee";
@@ -17,6 +18,7 @@ export default function Home() {
       <Quiz />
       <Cases />
       <Services />
+      <TeamSection />
       <Contacts />
       <Footer />
     </main>
