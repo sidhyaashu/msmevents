@@ -24,7 +24,7 @@ export default function Footer() {
                         <a href="https://www.youtube.com/@ChumakovEvents" target="_blank" className="hover:text-white transition-colors">YouTube</a>
                     </div>
 
-                    <div className="flex gap-6 md:border-l md:border-zinc-800 md:pl-8">
+                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 md:border-l md:border-zinc-800 md:pl-8">
                         <a href="mailto:msm.eventsmanagement@gmail.com" className="hover:text-white transition-colors">msm.eventsmanagement@gmail.com</a>
                         <a href="tel:+919635179728" className="hover:text-white transition-colors">+91 9635179728</a>
                     </div>

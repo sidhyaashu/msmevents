@@ -32,7 +32,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white leading-[1] mb-8 mix-blend-difference"
+                    className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter text-white leading-[1] mb-8 mix-blend-difference"
                 >
                     Crafted Events <br />
                     <span className="text-gray-400">Designed to </span>

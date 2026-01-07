@@ -107,7 +107,7 @@ export default function Services() {
                                             exit={{ height: 0, opacity: 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="pl-12 py-6 flex flex-col md:flex-row gap-6 md:items-end justify-between">
+                                            <div className="pl-4 md:pl-12 py-6 flex flex-col md:flex-row gap-6 md:items-end justify-between">
                                                 <p className="text-gray-400 text-lg max-w-md leading-relaxed">
                                                     {service.description}
                                                 </p>
