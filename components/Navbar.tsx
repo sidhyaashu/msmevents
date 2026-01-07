@@ -9,8 +9,9 @@ import { useLenis } from "lenis/react";
 
 const navLinks = [
     { name: "About", href: "#about-us" }, // Updated href to match ID in About.tsx
-    { name: "Cases", href: "#event-cases" }, // Updated href to match ID in Cases.tsx
+    { name: "Catalogue", href: "#event-cases" }, // Updated href to match ID in Cases.tsx
     { name: "Services", href: "#services" },
+    { name: "Team", href: "#team" },
     { name: "Contacts", href: "#contacts" },
 ];
 
