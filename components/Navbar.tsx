@@ -50,7 +50,13 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="relative z-50">
-                        <span className="text-xl font-bold tracking-tighter">MSM</span>
+                        <Image
+                            src="/assets/msm-logo-bg.png"
+                            alt="MSM Logo"
+                            width={70}
+                            height={20}
+                            className="object-contain"
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -78,7 +84,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden relative z-50 text-white p-2"
+                        className="md:hidden relative z-50 text-white p-2 cursor-pointer"
                     >
                         {isMobileMenuOpen ? <X /> : <Menu />}
                     </button>

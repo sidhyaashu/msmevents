@@ -123,7 +123,7 @@ export default function Quiz() {
                                         <button
                                             key={option}
                                             onClick={() => setAnswers({ ...answers, [currentQuestion.id]: option })}
-                                            className={`p-5 rounded-2xl border text-left transition-all duration-300 group relative overflow-hidden ${answers[currentQuestion.id] === option ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-900/50" : "bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/20"}`}
+                                            className={`p-5 rounded-2xl border text-left transition-all duration-300 group relative overflow-hidden cursor-pointer ${answers[currentQuestion.id] === option ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-900/50" : "bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/20"}`}
                                         >
                                             <div className="flex items-center justify-between relative z-10">
                                                 <span className="font-medium">{option}</span>
@@ -166,7 +166,7 @@ export default function Quiz() {
                                     <motion.button
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
-                                        className="w-full py-5 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full font-bold text-lg mt-8 transition-shadow shadow-lg shadow-blue-900/50 text-white"
+                                        className="w-full py-5 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full font-bold text-lg mt-8 transition-shadow shadow-lg shadow-blue-900/50 text-white cursor-pointer"
                                     >
                                         Send a request!
                                     </motion.button>
@@ -187,7 +187,7 @@ export default function Quiz() {
                         {currentQuestion.type !== "last-step" && (
                             <button
                                 onClick={handleNext}
-                                className="flex items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10"
+                                className="flex items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 cursor-pointer"
                             >
                                 Next <ChevronRight className="w-4 h-4" />
                             </button>

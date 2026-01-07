@@ -87,7 +87,7 @@ export default function Services() {
                             >
                                 <button
                                     onClick={() => toggleService(index)}
-                                    className={`w-full py-8 flex items-center justify-between text-left transition-all duration-300 border-b ${activeIndices.includes(index) ? "border-blue-500" : "border-gray-800 hover:border-gray-600"}`}
+                                    className={`w-full py-8 flex items-center justify-between text-left transition-all duration-300 border-b cursor-pointer ${activeIndices.includes(index) ? "border-blue-500" : "border-gray-800 hover:border-gray-600"}`}
                                 >
                                     <div className="flex items-center gap-6">
                                         <span className="text-sm font-mono text-gray-600">0{index + 1}</span>

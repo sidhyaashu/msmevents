@@ -13,7 +13,7 @@ export default function Hero() {
             {/* Dynamic Background */}
             <motion.div style={{ y }} className="absolute inset-0 z-0">
                 <Image
-                    src="https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678dd99434af5e331a7e507e_Nix30-2872.avif"
+                    src="/assets/hero.jpg"
                     alt="Hero background"
                     fill
                     className="object-cover opacity-60"
@@ -59,7 +59,7 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="inline-flex px-10 py-5 bg-white text-black rounded-full font-bold text-lg transition-transform hover:scale-110 items-center justify-center gap-2 group"
+                        className="inline-flex px-10 py-5 bg-white text-black rounded-full font-bold text-lg transition-transform hover:scale-110 items-center justify-center gap-2 group cursor-pointer"
                     >
                         Find out the price!
                         <div className="w-2 h-2 bg-black rounded-full group-hover:bg-blue-600 transition-colors" />

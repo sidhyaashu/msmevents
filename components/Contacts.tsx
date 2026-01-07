@@ -21,7 +21,7 @@ export default function Contacts() {
                     <div className="flex flex-col gap-10">
                         {/* Chat Item */}
                         <motion.a
-                            href="mailto:hello@chumakov.events"
+                            href="msm.eventsmanagement@gmail.com"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             className="flex items-start gap-6 group"
@@ -32,13 +32,13 @@ export default function Contacts() {
                             <div>
                                 <h4 className="font-bold text-xl mb-2">Chat with us</h4>
                                 <p className="text-gray-400 text-base mb-2">Our friendly team here to help you</p>
-                                <p className="text-white font-medium group-hover:text-blue-500 transition-colors">hello@chumakov.events</p>
+                                <p className="text-white font-medium group-hover:text-blue-500 transition-colors">msm.eventsmanagement@gmail.com</p>
                             </div>
                         </motion.a>
 
                         {/* Call Item */}
                         <motion.a
-                            href="tel:+36703780528"
+                            href="tel:+919635179728"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.1 }}
@@ -50,7 +50,7 @@ export default function Contacts() {
                             <div>
                                 <h4 className="font-bold text-xl mb-2">Call us</h4>
                                 <p className="text-gray-400 text-base mb-2">Call us whenever you need</p>
-                                <p className="text-white font-medium group-hover:text-blue-500 transition-colors">+36 703 78 05 28</p>
+                                <p className="text-white font-medium group-hover:text-blue-500 transition-colors">+91 9635179728</p>
                             </div>
                         </motion.a>
                     </div>
@@ -84,7 +84,7 @@ export default function Contacts() {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full py-4 bg-blue-600 hover:bg-blue-500 rounded-lg font-bold text-lg mt-4 transition-colors shadow-lg shadow-blue-900/20"
+                                className="w-full py-4 bg-blue-600 hover:bg-blue-500 rounded-lg font-bold text-lg mt-4 transition-colors shadow-lg shadow-blue-900/20 cursor-pointer"
                             >
                                 Submit
                             </motion.button>
