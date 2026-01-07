@@ -7,24 +7,36 @@ import { ChevronDown, ArrowUpRight } from "lucide-react";
 
 const services = [
     {
+        title: "Events management",
+        description: "End-to-end planning and execution for seamless events.",
+    },
+    {
+        title: "Retail Activation",
+        description: "Engaging in-store experiences to drive brand awareness and sales.",
+    },
+    {
+        title: "Product Launch",
+        description: "Strategic launch events to generate buzz and impact.",
+    },
+    {
+        title: "Award Function",
+        description: "Prestigious ceremonies to recognize and celebrate excellence.",
+    },
+    {
+        title: "Roadshow",
+        description: "Mobile brand experiences reaching audiences across multiple locations.",
+    },
+    {
+        title: "Audit Survey Program",
+        description: "Comprehensive data collection and analysis services.",
+    },
+    {
         title: "Corporate Events",
-        description: "Conferences, gala dinners, team-building, product launches.",
+        description: "Professional gatherings, conferences, and seminars.",
     },
     {
-        title: "Side Events",
-        description: "Exclusive networking experiences in a VIP setting, anywhere in the world.",
-    },
-    {
-        title: "Private Events",
-        description: "Weddings, birthdays, family celebrations, luxury gatherings.",
-    },
-    {
-        title: "Full-Service Event Planning",
-        description: "Concept development, venue selection, technical production, coordination.",
-    },
-    {
-        title: "Artist Booking",
-        description: "DJs, musicians, speakers, performers for any occasion.",
+        title: "Web Development",
+        description: "Custom websites and digital solutions for your business.",
     },
 ];
 

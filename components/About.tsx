@@ -30,14 +30,14 @@ export default function About() {
                     >
                         <div className="relative aspect-[4/5] w-full max-w-[500px] mx-auto overflow-hidden rounded-2xl">
                             <Image
-                                src="https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/6791232824486d437b5f6ee0_Image%201378.avif"
-                                alt="Viktor Chumakov"
+                                src="/assets/madhu.jpg"
+                                alt="Madhu Sudan Mondal"
                                 fill
                                 className="object-cover"
                             />
                         </div>
                         <p className="mt-4 text-center text-gray-400">
-                            Viktor Chumakov. <span className="text-gray-600">Owner of the event agency</span>
+                            Madhu Sudan Mondal. <span className="text-gray-600">Owner of the event agency</span>
                         </p>
                     </motion.div>
 
@@ -49,12 +49,13 @@ export default function About() {
                             transition={{ duration: 0.6 }}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
                         >
-                            With over 6 years of experience in event planning and production, we’ve created memorable events across Europe, the UAE, Asia, and Cyprus.
+                            MSM Events & Advertisements creates impactful events and brand activations with reliable execution across India.
+
                         </motion.h4>
 
                         <div className="space-y-6 text-lg text-gray-400">
                             <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-                                We work with market leaders in crypto, iGaming, and affiliate marketing, delivering events, product launches, and networking experiences that elevate brands and captivate audiences.
+                                We partner with leading brands to execute corporate events, exhibitions, product launches, and on-ground activations combining creativity, operational excellence, and reliable manpower to elevate brand presence and engage real audiences.
                             </motion.p>
                         </div>
 

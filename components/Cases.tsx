@@ -8,42 +8,42 @@ const cases = [
     {
         title: "Affiliate Night: Exclusive Event",
         tags: ["VIP", "Affiliate", "Sigma"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678fd81158e1c4e9260fec50_Dats%20Team%20Image.avif",
+        image: "/assets/scroll/8.jpg",
     },
     {
         title: "30th Anniversary Celebration",
         tags: ["Corporate", "Headliners", "Teambuilding"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c36fd8e7837259ab256_Nix30-2802.avif",
+        image: "/assets/scroll/9.jpg",
     },
     {
         title: "Christmas Gala Dinner",
         tags: ["Christmas", "Gala Dinner", "Casino"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678fd811fb7b3d3cf1505188_Christmas%20Gala%20Dinner.avif",
+        image: "/assets/scroll/10.jpg",
     },
     {
         title: "Birthday Corporate Party",
         tags: ["Teambuilding", "Corporate", "Quest"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678fd811fda8ac4b60bf3e91_Sentyabrevka%202023.avif",
+        image: "/assets/scroll/11.jpg",
     },
     {
         title: "May Party",
         tags: ["Family day", "1000+ guests", "Corporate"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678fd811a0fab16f1916a7dc_May%20Party.avif",
+        image: "/assets/scroll/12.jpg",
     },
     {
         title: "Family Day: Western Vibes",
         tags: ["Western", "Corporate", "IT-company"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678fd916ff96ae7abec002b6_Maevka%202023.avif",
+        image: "/assets/scroll/14.jpg",
     },
     {
         title: "Business Summit GMP+",
         tags: ["Forum", "Business event", "Conference"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/679291ae0b8637c1029b0d9e_alexandre-debieve-DOu3JJ3eLQc-unsplash.avif",
+        image: "/assets/scroll/15.jpg",
     },
     {
         title: "Nigth Parties",
         tags: ["Nightlife", "Show program", "Artists"],
-        image: "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/6793d38827a554adde4c8d2d_dawid-labno-tZTLzyz4-xI-unsplash.avif",
+        image: "/assets/scroll/16.jpg",
     },
 ];
 
@@ -77,7 +77,7 @@ function CaseCard({ item, index }: { item: any, index: number }) {
                 {/* Reveal Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
                     <span className="px-6 py-3 border border-white/30 rounded-full text-white tracking-widest uppercase text-sm font-bold bg-white/10 hover:bg-white/20 transition-colors">
-                        View Case
+                        View Event Details
                     </span>
                 </div>
             </div>

@@ -74,8 +74,8 @@ export default function Hero() {
                 transition={{ delay: 1 }}
                 className="absolute bottom-8 left-8 hidden md:flex flex-col gap-2 z-20 text-xs uppercase tracking-widest text-gray-400 mix-blend-difference"
             >
-                <a href="https://www.instagram.com/chumakov.events/" target="_blank" className="hover:text-white transition-colors">Instagram</a>
-                <a href="https://t.me/chumakov_events" target="_blank" className="hover:text-white transition-colors">Telegram</a>
+                <a href="https://www.instagram.com/chumakov.events/" target="_blank" className="hover:text-white transition-colors">Linkedin</a>
+                <a href="https://t.me/chumakov_events" target="_blank" className="hover:text-white transition-colors">Facebook</a>
                 <a href="https://www.youtube.com/@ChumakovEvents" className="hover:text-white transition-colors">YouTube</a>
             </motion.div>
         </section>

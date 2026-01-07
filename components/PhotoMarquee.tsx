@@ -4,21 +4,19 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const row1 = [
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3b5ed038c96aaa07218b_Copy%20of%20Nixopolis3186.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3b5e2f6227d057c6723e_Copy%20of%20datsteam_bangkok_12-24_-289.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c36c3ebba51aa52e56d_Copy%20of%20nix-year-818.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c36b98b4218c2df223d_Copy%20of%20Nix30-2748.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c36fd8e7837259ab256_Nix30-2802.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678fe71c2109b1efe52be36f_Nix%20May%20539.avif",
+    "/assets/scroll/8.jpg",
+    "/assets/scroll/9.jpg",
+    "/assets/scroll/10.jpg",
+    "/assets/scroll/11.jpg",
+    "/assets/scroll/12.jpg",
 ];
 
 const row2 = [
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c36a5be829c3bbaa44d_Copy%20of%20Nixopolis4187.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3b5ea9f5a3de5754d2d8_Copy%20of%20dt_-67.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c36a9f5a3de5755b4f0_Copy%20of%20BSA06973.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c363c7ab5634b11f7aa_Copy%20of%20Nix30-624.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3c35a5be829c3bbaa42f_Copy%20of%20Nixopolis4114.avif",
-    "https://cdn.prod.website-files.com/670d3ec1994882689450fd5d/678f3b5efd91f44850a65d78_Copy%20of%20dt_-181.avif",
+    "/assets/scroll/14.jpg",
+    "/assets/scroll/15.jpg",
+    "/assets/scroll/16.jpg",
+    "/assets/scroll/11.jpg",
+    "/assets/scroll/12.jpg",
 ];
 
 function MarqueeRow({ images, direction = "left", speed = 20 }: { images: string[], direction?: "left" | "right", speed?: number }) {
