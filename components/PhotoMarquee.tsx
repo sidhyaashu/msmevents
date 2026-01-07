@@ -67,7 +67,7 @@ export default function PhotoMarquee() {
                 <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="text-sm uppercase tracking-widest text-gray-500 mb-2">Welcome to Chumakov Events</motion.p>
                 <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="text-4xl md:text-6xl font-bold text-white">
                     No limits <br />
-                    <span className="text-stroke">Just epic events</span>
+                    <span className="opacity-50">Just epic events</span>
                 </motion.h2>
             </div>
 

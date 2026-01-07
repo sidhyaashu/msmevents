@@ -8,14 +8,14 @@ export default function About() {
         <section id="about-us" className="py-24 bg-black text-white">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Animated Background Numbers/Text */}
-                <div className="relative mb-24 font-bold text-5xl md:text-9xl text-neutral-900 select-none overflow-hidden">
-                    <motion.div initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 1 }} className="opacity-20 text-stroke">
+                <div className="relative mb-24 opacity-50 font-extrabold text-5xl md:text-9xl select-none overflow-hidden text-white">
+                    <motion.div initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
                         Nationwide
                     </motion.div>
-                    <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.1 }} className="opacity-20 text-stroke text-right">
+                    <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.1 }} className="text-right">
                         Nation scale
                     </motion.div>
-                    <motion.div initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="opacity-20 text-stroke">
+                    <motion.div initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 1, delay: 0.2 }}>
                         Renowned
                     </motion.div>
                 </div>
@@ -47,7 +47,7 @@ export default function About() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+                            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight opacity-50"
                         >
                             MSM Events & Advertisements creates impactful events and brand activations with reliable execution across India.
 

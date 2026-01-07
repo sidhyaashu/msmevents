@@ -109,7 +109,7 @@ export default function Cases() {
                         whileInView={{ opacity: 1 }}
                         className="text-sm uppercase tracking-widest text-gray-500 mb-2 mix-blend-difference"
                     >
-                        Cases
+                        Catalogue
                     </motion.p>
                     <motion.h2
                         initial={{ opacity: 0, x: -50 }}
@@ -118,7 +118,7 @@ export default function Cases() {
                         className="text-4xl md:text-7xl font-bold"
                     >
                         Explore our <br className="hidden md:block" />
-                        <span className="text-stroke">event cases</span>
+                        <span className="opacity-50">event cases</span>
                     </motion.h2>
                 </div>
 
