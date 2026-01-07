@@ -69,8 +69,8 @@ export default function TeamSection() {
                                         <span className="text-xs text-neutral-500">_0{index + 1}</span>
                                     </div>
                                     <div className="mt-1 flex items-center justify-between">
-                                        <span className="text-neutral-500 inline-block translate-y-6 text-sm opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">{member.role}</span>
-                                        <Link href={member.link} className="group-hover:text-primary inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100">
+                                        <span className="text-neutral-500 inline-block text-sm transition duration-300 translate-y-0 opacity-100 lg:translate-y-6 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">{member.role}</span>
+                                        <Link href={member.link} className="group-hover:text-primary inline-block text-sm tracking-wide transition-all duration-500 hover:underline translate-y-0 opacity-100 lg:translate-y-8 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
                                             {' '}
                                             Linktree
                                         </Link>

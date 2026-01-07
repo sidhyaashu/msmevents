@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import WaveSection from "@/components/WaveSection";
 import About from "@/components/About";
 import Cases from "@/components/Cases";
 import Services from "@/components/Services";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-blue-500 selection:text-white">
       <Hero />
+      <WaveSection />
       <PhotoMarquee />
       <About />
       <Quiz />
