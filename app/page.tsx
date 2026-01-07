@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Collaborators from "@/components/Collaborators";
 import WaveSection from "@/components/WaveSection";
 import About from "@/components/About";
 import Cases from "@/components/Cases";
@@ -18,6 +19,7 @@ export default function Home() {
       <PhotoMarquee />
       <About />
       <Quiz />
+      <Collaborators />
       <Cases />
       <Services />
       <TeamSection />
