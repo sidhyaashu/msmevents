@@ -1,8 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight, CheckCircle, AlertCircle } from "lucide-react";
+import {
+    submitQuizForm,
+    saveFormToStorage,
+    loadFormFromStorage,
+    clearFormStorage,
+    type QuizFormData
+} from "@/lib/form-manager";
 
 const steps = [
     {
@@ -10,42 +17,73 @@ const steps = [
         question: "What type of event do you have in mind?",
         options: ["Birthday party", "Product launch", "Corporate event", "Private celebration", "Business conference", "Gala dinner", "Wedding", "Other"],
         type: "radio",
+        fieldName: "eventType"
     },
     {
         id: 2,
-        question: "What’s the date and place of your event?",
+        question: "What's the date and place of your event?",
         type: "inputs",
-        fields: ["Date", "Place"],
+        fields: [
+            { name: "date", label: "Date", type: "date" },
+            { name: "place", label: "Place", type: "text" }
+        ],
     },
     {
         id: 3,
         question: "How many guests are you expecting?",
         options: ["10 - 30 people", "30 - 50 people", "50 - 100 people", "100 - 200 people", "200+ people"],
         type: "radio",
+        fieldName: "guestCount"
     },
     {
         id: 4,
         question: "Do you need a headline performer for event?",
-        options: ["Yes, we would like a famous performer", "Yes, but a local or emerging talent would be enough", "No, we don’t need a headline performer"],
-        type: "radio"
+        options: ["Yes, we would like a famous performer", "Yes, but a local or emerging talent would be enough", "No, we don't need a headline performer"],
+        type: "radio",
+        fieldName: "performer"
     },
     {
         id: 5,
         question: "Do you need a personal consultation?",
-        options: ["Yes, let’s schedule a call on Google Meet", "A phone call would be great", "I prefer communication via messenger", "Please send me the offer via WhatsApp/Telegram"],
-        type: "radio"
+        options: ["Yes, let's schedule a call on Google Meet", "A phone call would be great", "I prefer communication via messenger", "Please send me the offer via WhatsApp/Telegram"],
+        type: "radio",
+        fieldName: "consultationType"
     },
     {
         id: 6,
         question: "The last step! Leave us your contacts and we will reach out you!",
         type: "last-step",
-        fields: ["Name", "Email", "Phone"]
+        fields: [
+            { name: "name", label: "Name", type: "text" },
+            { name: "email", label: "Email", type: "email" },
+            { name: "phone", label: "Phone", type: "tel" }
+        ]
     }
 ];
 
 export default function Quiz() {
     const [currentStep, setCurrentStep] = useState(0);
-    const [answers, setAnswers] = useState<any>({});
+    const [formData, setFormData] = useState<QuizFormData>({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<{
+        type: "success" | "error" | null;
+        message: string;
+    }>({ type: null, message: "" });
+
+    // Load saved form data on mount
+    useEffect(() => {
+        const saved = loadFormFromStorage("quiz");
+        if (saved) {
+            setFormData(saved);
+        }
+    }, []);
+
+    // Save form data whenever it changes
+    useEffect(() => {
+        if (Object.keys(formData).length > 0) {
+            saveFormToStorage("quiz", formData);
+        }
+    }, [formData]);
 
     const handleNext = () => {
         if (currentStep < steps.length - 1) {
@@ -57,6 +95,37 @@ export default function Quiz() {
         if (currentStep > 0) {
             setCurrentStep(currentStep - 1);
         }
+    };
+
+    const handleInputChange = (field: string, value: string) => {
+        setFormData({ ...formData, [field]: value });
+    };
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus({ type: null, message: "" });
+
+        const result = await submitQuizForm(formData);
+
+        setSubmitStatus({
+            type: result.success ? "success" : "error",
+            message: result.message,
+        });
+
+        if (result.success) {
+            // Clear form and storage on success
+            clearFormStorage("quiz");
+            setFormData({});
+
+            // Reset to first step after 3 seconds
+            setTimeout(() => {
+                setCurrentStep(0);
+                setSubmitStatus({ type: null, message: "" });
+            }, 3000);
+        }
+
+        setIsSubmitting(false);
     };
 
     const currentQuestion = steps[currentStep];
@@ -75,7 +144,7 @@ export default function Quiz() {
                         whileInView={{ opacity: 1, x: 0 }}
                         className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                     >
-                       <span className="opacity-60"> A quick quiz to help us create the event of your <span className="text-blue-500">dreams!</span></span>
+                        <span className="opacity-60"> A quick quiz to help us create the event of your <span className="text-blue-500">dreams!</span></span>
                     </motion.h2>
                     <p className="text-gray-400 text-lg leading-relaxed">
                         Fill out this short quiz if you already know the event you&#x27;d like to organize!
@@ -119,32 +188,39 @@ export default function Quiz() {
                         >
                             {currentQuestion.type === "radio" && (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {currentQuestion.options?.map((option) => (
-                                        <button
-                                            key={option}
-                                            onClick={() => setAnswers({ ...answers, [currentQuestion.id]: option })}
-                                            className={`p-5 rounded-2xl border text-left transition-all duration-300 group relative overflow-hidden cursor-pointer ${answers[currentQuestion.id] === option ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-900/50" : "bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/20"}`}
-                                        >
-                                            <div className="flex items-center justify-between relative z-10">
-                                                <span className="font-medium">{option}</span>
-                                                <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${answers[currentQuestion.id] === option ? "border-white bg-white" : "border-gray-500 group-hover:border-gray-300"}`}>
-                                                    {answers[currentQuestion.id] === option && <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />}
+                                    {currentQuestion.options?.map((option) => {
+                                        const fieldName = currentQuestion.fieldName || '';
+                                        const isSelected = formData[fieldName as keyof QuizFormData] === option;
+
+                                        return (
+                                            <button
+                                                key={option}
+                                                onClick={() => handleInputChange(fieldName, option)}
+                                                className={`p-5 rounded-2xl border text-left transition-all duration-300 group relative overflow-hidden cursor-pointer ${isSelected ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-900/50" : "bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/20"}`}
+                                            >
+                                                <div className="flex items-center justify-between relative z-10">
+                                                    <span className="font-medium">{option}</span>
+                                                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${isSelected ? "border-white bg-white" : "border-gray-500 group-hover:border-gray-300"}`}>
+                                                        {isSelected && <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
-                                    ))}
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             )}
 
                             {currentQuestion.type === "inputs" && (
                                 <div className="space-y-6">
                                     {currentQuestion.fields?.map((field) => (
-                                        <div key={field}>
-                                            <label className="block text-sm text-gray-400 mb-2 font-medium ml-1">{field}</label>
+                                        <div key={field.name}>
+                                            <label className="block text-sm text-gray-400 mb-2 font-medium ml-1">{field.label}</label>
                                             <input
-                                                type={field === "Date" ? "date" : "text"}
+                                                type={field.type}
+                                                value={(formData[field.name as keyof QuizFormData] as string) || ""}
+                                                onChange={(e) => handleInputChange(field.name, e.target.value)}
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl p-5 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder-gray-600"
-                                                placeholder={`Enter ${field}`}
+                                                placeholder={`Enter ${field.label}`}
                                             />
                                         </div>
                                     ))}
@@ -152,25 +228,55 @@ export default function Quiz() {
                             )}
 
                             {currentQuestion.type === "last-step" && (
-                                <div className="space-y-6">
+                                <form onSubmit={handleSubmit} className="space-y-6">
                                     {currentQuestion.fields?.map((field) => (
-                                        <div key={field}>
-                                            <label className="block text-sm text-gray-400 mb-2 font-medium ml-1">{field === "Phone" ? "Your Phone Number" : `Your ${field}`}</label>
+                                        <div key={field.name}>
+                                            <label className="block text-sm text-gray-400 mb-2 font-medium ml-1">
+                                                {field.name === "phone" ? "Your Phone Number" : `Your ${field.label}`}
+                                            </label>
                                             <input
-                                                type={field === "Email" ? "email" : "text"}
+                                                type={field.type}
+                                                value={(formData[field.name as keyof QuizFormData] as string) || ""}
+                                                onChange={(e) => handleInputChange(field.name, e.target.value)}
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl p-5 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-white placeholder-gray-600"
-                                                placeholder={`Enter ${field}`}
+                                                placeholder={`Enter ${field.label}`}
+                                                required
                                             />
                                         </div>
                                     ))}
+
+                                    {/* Status Message */}
+                                    {submitStatus.type && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className={`p-4 rounded-lg flex items-center gap-3 ${submitStatus.type === "success"
+                                                    ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                                                    : "bg-red-500/10 border border-red-500/20 text-red-400"
+                                                }`}
+                                        >
+                                            {submitStatus.type === "success" ? (
+                                                <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                                            ) : (
+                                                <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                                            )}
+                                            <span className="text-sm font-medium">{submitStatus.message}</span>
+                                        </motion.div>
+                                    )}
+
                                     <motion.button
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className="w-full py-5 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full font-bold text-lg mt-8 transition-shadow shadow-lg shadow-blue-900/50 text-white cursor-pointer"
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                                        whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                                        className={`w-full py-5 rounded-full font-bold text-lg mt-8 transition-shadow shadow-lg text-white cursor-pointer ${isSubmitting
+                                                ? "bg-gray-600 cursor-not-allowed"
+                                                : "bg-gradient-to-r from-blue-600 to-blue-500 shadow-blue-900/50"
+                                            }`}
                                     >
-                                        Send a request!
+                                        {isSubmitting ? "Sending request..." : "Send a request!"}
                                     </motion.button>
-                                </div>
+                                </form>
                             )}
                         </motion.div>
                     </AnimatePresence>

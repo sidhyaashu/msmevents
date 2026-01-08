@@ -50,10 +50,10 @@ export default function Collaborators() {
             <div className="w-full max-w-6xl mx-auto relative z-10">
                 <h2 className="mb-8 text-center">
                     <span className="block font-medium text-lg text-gray-500 uppercase tracking-widest mb-2">
-                        Companies we
+                        Trusted by
                     </span>
                     <span className="font-bold text-3xl md:text-5xl text-white tracking-tight">
-                        collaborate with.
+                       leading companies
                     </span>
                 </h2>
 

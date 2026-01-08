@@ -3,46 +3,47 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { useLenis } from "lenis/react";
 
 const cases = [
     {
-        title: "Affiliate Night: Exclusive Event",
-        tags: ["VIP", "Affiliate", "Sigma"],
+        title: "Recognition Ceremony: Honoring Excellence",
+        tags: ["Excellence", "Recognition", "Achievement"],
         image: "/assets/scroll/8.jpg",
     },
     {
-        title: "30th Anniversary Celebration",
-        tags: ["Corporate", "Headliners", "Teambuilding"],
+        title: "Affiliate Night: Exclusive Event",
+        tags: ["VIP", "Affiliate", "Elite"],
         image: "/assets/scroll/9.jpg",
     },
     {
-        title: "Christmas Gala Dinner",
-        tags: ["Christmas", "Gala Dinner", "Casino"],
+        title: "Corporate Seminar: Leadership & Growth",
+        tags: ["Leadership", "Growth", "Corporate"],
         image: "/assets/scroll/10.jpg",
     },
     {
-        title: "Birthday Corporate Party",
-        tags: ["Teambuilding", "Corporate", "Quest"],
+        title: "Retail Activation: In-Store Engagement",
+        tags: ["Retail", "Activation", "Engagement"],
         image: "/assets/scroll/11.jpg",
     },
     {
-        title: "May Party",
-        tags: ["Family day", "1000+ guests", "Corporate"],
+        title: "Corporate Seminar: Executive Excellence",
+        tags: ["Executive", "Excellence", "Corporate"],
         image: "/assets/scroll/12.jpg",
     },
     {
-        title: "Family Day: Western Vibes",
-        tags: ["Western", "Corporate", "IT-company"],
+        title: "Retail Activation: Brand Experience Event",
+        tags: ["Retail", "Activation", "Brand"],
         image: "/assets/scroll/14.jpg",
     },
     {
-        title: "Business Summit GMP+",
-        tags: ["Forum", "Business event", "Conference"],
+        title: "Branding: Building Brand Identity",
+        tags: ["Branding", "Identity", "Building"],
         image: "/assets/scroll/15.jpg",
     },
     {
-        title: "Nigth Parties",
-        tags: ["Nightlife", "Show program", "Artists"],
+        title: "Product Showcase: Launch & Innovation",
+        tags: ["Product", "Showcase", "Launch"],
         image: "/assets/scroll/16.jpg",
     },
 ];
@@ -58,11 +59,25 @@ function CaseCard({ item, index }: { item: any, index: number }) {
     const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
     const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
+    const lenis = useLenis();
+
+    const handleContactClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (lenis) {
+            lenis.scrollTo('#contacts', { duration: 1.5 });
+        } else {
+            const contactsSection = document.getElementById('contacts');
+            if (contactsSection) {
+                contactsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    };
+
     return (
         <motion.div
             ref={ref}
             style={{ opacity }}
-            className="group relative cursor-pointer"
+            className="group relative"
         >
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-900 mb-4">
                 <motion.div style={{ scale }} className="w-full h-full relative">
@@ -75,9 +90,12 @@ function CaseCard({ item, index }: { item: any, index: number }) {
                 </motion.div>
 
                 {/* Reveal Overlay */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                <div
+                    onClick={handleContactClick}
+                    className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm cursor-pointer"
+                >
                     <span className="px-6 py-3 border border-white/30 rounded-full text-white tracking-widest uppercase text-sm font-bold bg-white/10 hover:bg-white/20 transition-colors">
-                        View Event Details
+                        Contact Us
                     </span>
                 </div>
             </div>
@@ -118,7 +136,7 @@ export default function Cases() {
                         className="text-4xl md:text-7xl font-bold"
                     >
                         Explore our <br className="hidden md:block" />
-                        <span className="opacity-50">event cases</span>
+                        <span className="opacity-50">event Catalogue</span>
                     </motion.h2>
                 </div>
 
