@@ -20,8 +20,8 @@ const members = [
         link: '#',
     },
     {
-        name: 'Henry Lee',
-        role: 'UX Engeneer',
+        name: 'Gourav Das',
+        role: 'Supervisor',
         avatar: '/assets/team/t4.jpg',
         link: '#',
     },
@@ -32,7 +32,7 @@ const members = [
         link: '#',
     },
     {
-        name: 'Olivia Miller',
+        name: 'Balaram Bhakat',
         role: 'Designer',
         avatar: '/assets/team/t2.jpg',
         link: '#',
@@ -70,10 +70,10 @@ export default function TeamSection() {
                                     </div>
                                     <div className="mt-1 flex items-center justify-between">
                                         <span className="text-neutral-500 inline-block text-sm transition duration-300 translate-y-0 opacity-100 lg:translate-y-6 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">{member.role}</span>
-                                        <Link href={member.link} className="group-hover:text-primary inline-block text-sm tracking-wide transition-all duration-500 hover:underline translate-y-0 opacity-100 lg:translate-y-8 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+                                        {/* <Link href={member.link} className="group-hover:text-primary inline-block text-sm tracking-wide transition-all duration-500 hover:underline translate-y-0 opacity-100 lg:translate-y-8 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
                                             {' '}
                                             Linktree
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>
