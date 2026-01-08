@@ -19,9 +19,9 @@ export default function Footer() {
 
                 <div className="flex flex-col md:flex-row items-center gap-8 text-gray-400">
                     <div className="flex gap-6">
-                        <a href="https://www.instagram.com/chumakov.events/" target="_blank" className="hover:text-white transition-colors">Linkedin</a>
-                        <a href="https://t.me/chumakov_events" target="_blank" className="hover:text-white transition-colors">Facebook</a>
-                        <a href="https://www.youtube.com/@ChumakovEvents" target="_blank" className="hover:text-white transition-colors">YouTube</a>
+                        <a href="https://www.linkedin.com/company/msm-events-advertisement" target="_blank" className="hover:text-white transition-colors">Linkedin</a>
+                        {/* <a href="https://t.me/chumakov_events" target="_blank" className="hover:text-white transition-colors">Facebook</a> */}
+                        <a href="https://youtube.com/@msmeventsadvertisements" target="_blank" className="hover:text-white transition-colors">YouTube</a>
                     </div>
 
                     <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 md:border-l md:border-zinc-800 md:pl-8">
