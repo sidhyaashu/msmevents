@@ -14,10 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "MSM Events & Advertiesments",
   description: "MSM Events & Advertiesments",
 };
+
+
 
 export default function RootLayout({
   children,
